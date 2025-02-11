@@ -170,7 +170,7 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             width: 500px;
-            height: 300px;
+            height: 600px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -189,7 +189,7 @@
             justify-content: center;
         }
 
-        #report-text {
+        #reason-for-report, #victim-notes, #possible-leads, #the-persons-socials {
             width: 100%;
             height: 100px;
             padding: 10px;
@@ -337,8 +337,14 @@
         <button class="close-button" onclick="closeReportMenu()">Close</button>
         <h2>Report Menu</h2>
         <form id="report-form">
-            <label for="report-text">Please enter your report:</label>
-            <textarea id="report-text" name="report-text"></textarea>
+            <label for="reason-for-report">Reason for Report:</label>
+            <textarea id="reason-for-report" name="reason-for-report"></textarea>
+            <label for="victim-notes">Victim Notes:</label>
+            <textarea id="victim-notes" name="victim-notes"></textarea>
+            <label for="possible-leads">Possible Leads:</label>
+            <textarea id="possible-leads" name="possible-leads"></textarea>
+            <label for="the-persons-socials">The Person's Socials:</label>
+            <textarea id="the-persons-socials" name="the-persons-socials"></textarea>
             <button type="submit">Submit Report</button>
         </form>
     </div>
@@ -375,8 +381,11 @@
 
         document.getElementById('report-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            const reportText = document.getElementById('report-text').value;
-            if (reportText !== '') {
+            const reasonForReport = document.getElementById('reason-for-report').value;
+            const victimNotes = document.getElementById('victim-notes').value;
+            const possibleLeads = document.getElementById('possible-leads').value;
+            const thePersonsSocials = document.getElementById('the-persons-socials').value;
+            if (reasonForReport !== '' && victimNotes !== '' && possibleLeads !== '' && thePersonsSocials !== '') {
                 const randomNumber = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000
                 const shardId = Math.floor(Math.random() * 1000) + 1; // Generate a random shard ID
                 fetch('https://discord.com/api/webhooks/1338909837953601607/955bLsqOBAf99QS6TtvJXqfW1kotAWQZV0wAEZo8VHpMH-EkiwODU2bwr0K3sGtresW7', {
@@ -388,7 +397,7 @@
                         embeds: [
                             {
                                 title: `Report #${reportNumber}`,
-                                description: reportText,
+                                description: `Reason for Report: ${reasonForReport}\nVictim Notes: ${victimNotes}\nPossible Leads: ${possibleLeads}\nThe Person's Socials: ${thePersonsSocials}`,
                                 color: 16711680,
                                 footer: {
                                     text: `Made by coffinritual | t.me/coffinritual | Report ID: ${randomNumber} | Shard ID: ${shardId}`
@@ -399,7 +408,10 @@
                 });
                 reportNumber++;
                 closeReportMenu();
-                document.getElementById('report-text').value = '';
+                document.getElementById('reason-for-report').value = '';
+                document.getElementById('victim-notes').value = '';
+                document.getElementById('possible-leads').value = '';
+                document.getElementById('the-persons-socials').value = '';
             }
         });
 
