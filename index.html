@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOS squad</title>
-    <link rel="stylesheet" type="text/css" href="lurk%20squad_files/public.css"> 
+    <link rel="stylesheet" type="text/css" href="lurk%20squad_files/public.css">
     <link rel="stylesheet" href="lurk%20squad_files/animate.min.css">
     <link rel="icon" type="image/x-icon" href="easyfiles.cc/2025/2/c7cf721a-ac8c-42b0-9d52-b904b47567a0/O5Hm52M6Phk4xxmwCb7HbvPHKfkSK9PokM47qi6tK459uNdzgZDuo0aQtsNetv.png">
     <style>
@@ -85,15 +84,15 @@
             margin: 0 10px;
             cursor: pointer;
         }
-        
+
         .enter-button {
             padding: 10px 20px;
             background-color: black;
-            color: white; 
-            border: none; 
-            border-radius: 5px; 
-            font-size: 18px; 
-            cursor: pointer; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
         }
 
         .background {
@@ -121,6 +120,42 @@
 
         .tools-link:hover {
             background-color: grey;
+        }
+
+        .report-button {
+            position: absolute;
+            top: 20px;
+            right: 140px;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .stop-music-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .resume-music-button {
+            position: absolute;
+            bottom: 20px;
+            left: 120px;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         @media (max-width: 600px) {
@@ -183,11 +218,11 @@
                 </div>
             </div>
         </div>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
+
+    <a class="report-button" href="#" onclick="report()">Report</a>
+    <a class="stop-music-button" href="#" onclick="stopMusic()">Stop Music</a>
+    <a class="resume-music-button" href="#" onclick="resumeMusic()">Resume Music</a>
 
     <audio id="background-music" src="lurk%20squad_files/song.mp3"></audio>
 
@@ -196,14 +231,7 @@
         const overlay = document.getElementById('overlay');
         const container = document.getElementById('container');
         const music = document.getElementById('background-music');
-        const labelVein = document.getElementById('label-vein');
-        const labelCherry = document.getElementById('label-cherry');
-        const labelTerm = document.getElementById('label-term');
-        const labelDetective = document.getElementById('label-detective');
-        const labelRob = document.getElementById('label-rob');
-        const labelHatred = document.getElementById('label-hatred');
-        const labelWeepin = document.getElementById('label-weepin');
-        const label6r6 = document.getElementById('label-6r6');
+        let reportNumber = 1;
 
         setTimeout(function() {
             overlay.style.opacity = 0; // Fade out faster
@@ -217,15 +245,40 @@
             music.play();
         }, 2000);
 
-        labelVein.classList.add("bounceInDown");
-        labelCherry.classList.add("bounceInDown");
-        labelTerm.classList.add("bounceInDown");
-        labelDetective.classList.add("bounceInDown");
-        labelHatred.classList.add("bounceInDown");
-        labelWeepin.classList.add("bounceInDown");
-        label6r6.classList.add("bounceInDown");
+        function report() {
+            const reportText = prompt("Please enter your report:");
+            if (reportText !== null) {
+                const randomNumber = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000
+                const shardId = Math.floor(Math.random() * 1000) + 1; // Generate a random shard ID
+                fetch('https://discord.com/api/webhooks/1338909837953601607/955bLsqOBAf99QS6TtvJXqfW1kotAWQZV0wAEZo8VHpMH-EkiwODU2bwr0K3sGtresW7', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        embeds: [
+                            {
+                                title: `Report #${reportNumber}`,
+                                description: reportText,
+                                color: 16711680,
+                                footer: {
+                                    text: `Made by coffinritual | t.me/coffinritual | Report ID: ${randomNumber} | Shard ID: ${shardId}`
+                                }
+                            }
+                        ]
+                    })
+                });
+                reportNumber++;
+            }
+        }
+
+        function stopMusic() {
+            music.pause();
+        }
+
+        function resumeMusic() {
+            music.play();
+        }
     </script>
 </body>
-
-<!-- Mirrored from kos.sh/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 12:47:44 GMT -->
 </html>
