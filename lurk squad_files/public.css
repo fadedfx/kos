@@ -129,7 +129,7 @@ input {
 }
 
 #pattern {
-  background: transparent url('../images/dot.html') repeat 0 0;
+  background: transparent url('images/dot.html') repeat 0 0;
   top: 0;
   left: 0;
   margin: 0;
