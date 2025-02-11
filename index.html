@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from kos.sh/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 12:47:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOS squad</title>
+    <link rel="stylesheet" type="text/css" href="lurk%20squad_files/public.css"> 
+    <link rel="stylesheet" href="lurk%20squad_files/animate.min.css">
+    <link rel="icon" type="image/x-icon" href="../easyfiles.cc/2025/2/c7cf721a-ac8c-42b0-9d52-b904b47567a0/O5Hm52M6Phk4xxmwCb7HbvPHKfkSK9PokM47qi6tK459uNdzgZDuo0aQtsNetv.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.2s ease-out; /* Faster fade-out */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            width: 90%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .profile-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .profile-container {
+            margin: 10px;
+            text-align: center;
+            flex: 0 0 120px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        h2 {
+            color: white;
+            margin: 10px 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .icon {
+            width: 25px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .enter-button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            cursor: pointer; 
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../i.pinimg.com/736x/bd/92/a8/bd92a85a6d472da5575d80555b6e1357.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .tools-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .tools-link:hover {
+            background-color: grey;
+        }
+
+        @media (max-width: 600px) {
+            .tools-link {
+                font-size: 14px;
+            }
+
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div class="background"></div>
+
+    <div class="overlay" id="overlay">
+        <button class="enter-button" id="enter-button">Click Me</button>
+    </div>
+
+    <div class="container" id="container" style="display: none;">
+        <div class="profile-row">
+            <div class="profile-container" id="container-crime">
+                <img src="../easyfiles.cc/2025/2/33f903f9-076a-4ff0-8d36-5840356de55a/img123.jpg" alt="crime's Profile Picture" class="profile-pic">
+                <h2 class="animated bounceInDown" id="label-crime">Crime</h2>
+                <div class="social-icons">
+                    <a href="https://t.me/crimekos" target="_blank">
+                        <img src="lurk%20squad_files/telegram-app.png" alt="Telegram" class="icon">
+                    </a>
+                    <a href="https://discord.com/users/1306965768033796160" target="_blank">
+                        <img src="lurk%20squad_files/discord-logo.png" alt="Discord" class="icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-container" id="container-coffin">
+                <img src="../easyfiles.cc/2025/2/7802d9bb-b2c1-4a10-bc6c-5ac8bd7d04af/photo_2025-02-10_16-37-12.jpg" alt="Coffin's Profile Picture" class="profile-pic">
+                <h2 class="animated bounceInDown" id="label-coffin">Coffin</h2>
+                <div class="social-icons">
+                    <a href="https://t.me/coffinritual" target="_blank">
+                        <img src="lurk%20squad_files/telegram-app.png" alt="Telegram" class="icon">
+                    </a>
+                    <a href="https://discord.com/users/1338596187309215815" target="_blank">
+                        <img src="lurk%20squad_files/discord-logo.png" alt="Discord" class="icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-container" id="container-cursed">
+                <img src="../easyfiles.cc/2025/2/144c8a70-56a7-42e2-9680-725f72ee70d5/photo_2025-02-10_22-56-55.jpg" alt="Cursed's Profile Picture" class="profile-pic">
+                <h2 class="animated bounceInDown" id="label-cursed">Cursed</h2>
+                <div class="social-icons">
+                    <a href="https://t.me/ruinedtrust" target="_blank">
+                        <img src="lurk%20squad_files/telegram-app.png" alt="Telegram" class="icon">
+                    </a>
+                    <a href="https://discord.com/users/1337202879416504391" target="_blank">
+                        <img src="lurk%20squad_files/discord-logo.png" alt="Discord" class="icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="background-music" src="lurk%20squad_files/song.mp3"></audio>
+
+    <script>
+        const enterButton = document.getElementById('enter-button');
+        const overlay = document.getElementById('overlay');
+        const container = document.getElementById('container');
+        const music = document.getElementById('background-music');
+        const labelVein = document.getElementById('label-vein');
+        const labelCherry = document.getElementById('label-cherry');
+        const labelTerm = document.getElementById('label-term');
+        const labelDetective = document.getElementById('label-detective');
+        const labelRob = document.getElementById('label-rob');
+        const labelHatred = document.getElementById('label-hatred');
+        const labelWeepin = document.getElementById('label-weepin');
+        const label6r6 = document.getElementById('label-6r6');
+
+        setTimeout(function() {
+            overlay.style.opacity = 0; // Fade out faster
+            setTimeout(function() {
+                overlay.style.display = 'none';
+                container.style.display = 'flex';
+            }, 200); // Match the fade duration
+        }, 2000); // Short delay before fading out
+
+        setTimeout(function() {
+            music.play();
+        }, 2000);
+
+        labelVein.classList.add("bounceInDown");
+        labelCherry.classList.add("bounceInDown");
+        labelTerm.classList.add("bounceInDown");
+        labelDetective.classList.add("bounceInDown");
+        labelHatred.classList.add("bounceInDown");
+        labelWeepin.classList.add("bounceInDown");
+        label6r6.classList.add("bounceInDown");
+    </script>
+</body>
+
+<!-- Mirrored from kos.sh/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 12:47:44 GMT -->
+</html>
