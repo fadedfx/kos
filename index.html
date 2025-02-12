@@ -4,8 +4,8 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOS </title>
-    <link rel="stylesheet" type="text/css" href="lurk%20squad_files/public.css">
+    <title>KOS squad</title>
+    <link rel="stylesheet" type="text/css" href="lurk%20squad_files/public.css"> 
     <link rel="stylesheet" href="lurk%20squad_files/animate.min.css">
     <link rel="icon" type="image/x-icon" href="easyfiles.cc/2025/2/c7cf721a-ac8c-42b0-9d52-b904b47567a0/O5Hm52M6Phk4xxmwCb7HbvPHKfkSK9PokM47qi6tK459uNdzgZDuo0aQtsNetv.png">
     <style>
@@ -84,15 +84,15 @@
             margin: 0 10px;
             cursor: pointer;
         }
-
+        
         .enter-button {
             padding: 10px 20px;
             background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            cursor: pointer; 
         }
 
         .background {
@@ -122,108 +122,36 @@
             background-color: grey;
         }
 
-        .report-button {
-            position: absolute;
-            top: 20px;
-            right: 140px;
-            background-color: black;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .stop-music-button {
+        .button-container-left {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background-color: black;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
         }
 
-        .resume-music-button {
+        .button-container-right {
             position: absolute;
             bottom: 20px;
-            left: 120px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+        }
+
+        .report-button, .stop-music-button, .resume-music-button {
             background-color: black;
             color: white;
             padding: 10px 15px;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
+            margin: 0 10px;
         }
 
-        .report-menu {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            width: 500px;
-            height: 600px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.5s ease-out;
-        }
-
-        .report-menu.show {
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        #report-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #reason-for-report, #victim-notes, #possible-leads, #the-persons-socials {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            background-color: transparent;
-            color: white;
-        }
-
-        #report-form button[type="submit"] {
-            background: black;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        #report-form button[type="submit"]:hover {
-            background: grey;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: black;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .report-button:hover, .stop-music-button:hover, .resume-music-button:hover {
+            background-color: grey;
         }
 
         @media (max-width: 600px) {
@@ -247,9 +175,9 @@
 
     <div class="container" id="container" style="display: none;">
         <div class="profile-row">
-            <div class="profile-container" id="container-ziggy">
-                <img src="easyfiles.cc/2025/2/7798e2d4-bf5c-45b0-9fa2-0f9af08efbb7/fc1468bea16970cf0f2482d107b3c621.gif" alt="ziggy's Profile Picture" class="profile-pic">
-                <h2 class="animated bounceInDown" id="label-ziggy">Ziggy</h2>
+            <div class="profile-container" id="container-Ziggy">
+                <img src="easyfiles.cc/2025/2/33f903f9-076a-4ff0-8d36-5840356de55a/img123.jpg" alt="Ziggy's Profile Picture" class="profile-pic">
+                <h2 class="animated bounceInDown" id="label-Ziggy">Ziggy</h2>
                 <div class="social-icons">
                     <a href="https://t.me/ti_amani" target="_blank">
                         <img src="lurk%20squad_files/telegram-app.png" alt="Telegram" class="icon">
@@ -259,45 +187,31 @@
                     </a>
                 </div>
             </div>
-
-    <a class="report-button" href="#" onclick="openReportMenu()">Report</a>
-    <a class="stop-music-button" href="#" onclick="stopMusic()">Stop Music</a>
-    <a class="resume-music-button" href="#" onclick="resumeMusic()">Resume Music</a>
-
-    <div class="report-menu" id="report-menu">
-        <button class="close-button" onclick="closeReportMenu()">Close</button>
-        <h2>Report Menu</h2>
-        <form id="report-form">
-            <label for="reason-for-report">Reason for Report:</label>
-            <textarea id="reason-for-report" name="reason-for-report"></textarea>
-            <label for="victim-notes">Victim Notes:</label>
-            <textarea id="victim-notes" name="victim-notes"></textarea>
-            <label for="possible-leads">Possible Leads:</label>
-            <textarea id="possible-leads" name="possible-leads"></textarea>
-            <label for="the-persons-socials">The Person's Socials:</label>
-            <textarea id="the-persons-socials" name="the-persons-socials"></textarea>
-            <button type="submit">Submit Report</button>
-        </form>
+        </div>
     </div>
 
-    <audio id="background-music" src="lurk%20squad_files/song.mp3"></audio>
+    <div class="button-container-left">
+        <a class="report-button" href="#" onclick="openReportMenu()">Report</a>
+        <a class="stop-music-button" href="#" onclick="stopMusic()">Stop Music</a>
+        <a class="resume-music-button" href="#" onclick="resumeMusic()">Resume Music</a>
+    </div>
 
-    <div style="position: absolute; bottom: 20px; right: 20px;">
+    <div class="button-container-right">
         <a href="https://t.me/kosmain" target="_blank" title="KOS Announcements">
             <img src="lurk%20squad_files/telegram-app.png" alt="Telegram" class="icon">
         </a>
         <a href="https://t.me/KOSPUBCHAT" target="_blank" title="KOS Public Chat">
             <img src="lurk%20squad_files/telegram-app.png" alt="Telegram" class="icon">
         </a>
-    </div>    
+    </div>
+
+    <audio id="background-music" src="lurk%20squad_files/song.mp3"></audio>
 
     <script>
         const enterButton = document.getElementById('enter-button');
         const overlay = document.getElementById('overlay');
         const container = document.getElementById('container');
         const music = document.getElementById('background-music');
-        const reportMenu = document.getElementById('report-menu');
-        let reportNumber = 1;
 
         setTimeout(function() {
             overlay.style.opacity = 0; // Fade out faster
@@ -312,48 +226,8 @@
         }, 2000);
 
         function openReportMenu() {
-            reportMenu.classList.add('show');
+            // Add report menu functionality here
         }
-
-        function closeReportMenu() {
-            reportMenu.classList.remove('show');
-        }
-
-        document.getElementById('report-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const reasonForReport = document.getElementById('reason-for-report').value;
-            const victimNotes = document.getElementById('victim-notes').value;
-            const possibleLeads = document.getElementById('possible-leads').value;
-            const thePersonsSocials = document.getElementById('the-persons-socials').value;
-            if (reasonForReport !== '' && victimNotes !== '' && possibleLeads !== '' && thePersonsSocials !== '') {
-                const randomNumber = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000
-                const shardId = Math.floor(Math.random() * 1000) + 1; // Generate a random shard ID
-                fetch('https://discord.com/api/webhooks/1338909837953601607/955bLsqOBAf99QS6TtvJXqfW1kotAWQZV0wAEZo8VHpMH-EkiwODU2bwr0K3sGtresW7', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        embeds: [
-                            {
-                                title: `Report #${reportNumber}`,
-                                description: `Reason for Report: ${reasonForReport}\nVictim Notes: ${victimNotes}\nPossible Leads: ${possibleLeads}\nThe Person's Socials: ${thePersonsSocials}`,
-                                color: 16711680,
-                                footer: {
-                                    text: `Made by coffinritual | t.me/coffinritual | Report ID: ${randomNumber} | Shard ID: ${shardId}`
-                                }
-                            }
-                        ]
-                    })
-                });
-                reportNumber++;
-                closeReportMenu();
-                document.getElementById('reason-for-report').value = '';
-                document.getElementById('victim-notes').value = '';
-                document.getElementById('possible-leads').value = '';
-                document.getElementById('the-persons-socials').value = '';
-            }
-        });
 
         function stopMusic() {
             music.pause();
@@ -364,4 +238,6 @@
         }
     </script>
 </body>
+
+<!-- Mirrored from kos.sh/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 12:47:44 GMT -->
 </html>
